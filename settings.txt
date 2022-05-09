@@ -1,0 +1,4 @@
+Settings:
+
+[Default Directory]
+	C:/Users/chanb/OneDrive/Documents/_Suny Side Up/Masters/New Masters
