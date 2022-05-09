@@ -1,3 +1,3 @@
-For download, click on the file and then on next page click "Downloan"
+For download, click on the file and then on next page click "Download"
 
-This directory not tracked by git. All files must manally loaded.
+Author's note: This directory not tracked by local git. All files must manally loaded.
