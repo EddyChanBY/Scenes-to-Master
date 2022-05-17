@@ -54,7 +54,7 @@ def convert_start(self):
     if self.app_pid == 0:
         self.m_ui.statusbar.showMessage("Opening Excel in the background")
         self.m_ui.statusbar.repaint()
-        app = xw.App(visible=False)
+        app = xw.App(visible = False)
         self.app_pid = app.pid
     else:
         app = xw.apps[self.app_pid]
@@ -176,6 +176,7 @@ def convert_start(self):
             
         # copy data over
         wb_master.sheets[self.sc.eps].range('A1').options(index=False).value = self.df_ep
+        wb_master.save()
         # Now need to clear the df_ep for next episode
         self.df_ep = wb_template.sheets['Eps'].range('A1').options(pd.DataFrame, 
                              header=True,
@@ -187,6 +188,7 @@ def convert_start(self):
         # Update sets and cast in the template file, do this ep by ep just in case abort
         wb_template.sheets['Sets'].range('A1').options(index=False).value = self.df_set
         wb_template.sheets['Casts'].range('A1').options(index=False).value = self.df_cast
+        wb_template.save()
     self.m_ui.statusbar.showMessage("All episodes converted.")
     self.m_ui.statusbar.repaint()
     

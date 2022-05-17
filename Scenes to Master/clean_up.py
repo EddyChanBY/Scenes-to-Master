@@ -8,6 +8,7 @@ def clean_excel(self):
         try:
             # Check if wb_template is definded
             wb_template = app.books[os.path.basename(self.template_file)]
+            wb_template.save()
             wb_template.close()
         except:
             pass
@@ -18,6 +19,7 @@ def clean_excel(self):
                 ws_array.append(sheet.name)
             if 'Sheet1' in ws_array and len(ws_array) > 1:
                 wb_master.sheets['Sheet1'].delete()
+            wb_master.save()
             wb_master.close()
         except:
             pass

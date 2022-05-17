@@ -11,7 +11,7 @@ import warning_msg
 def est_wb(self):
     # to open workbooks, access sheet and set up data frames
     if self.app_pid == 0:
-        app = xw.App(visible=False)
+        app = xw.App()
         self.app_pid = app.pid
     else:
         app = xw.apps[self.app_pid]
